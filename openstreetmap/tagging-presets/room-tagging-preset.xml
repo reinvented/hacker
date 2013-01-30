@@ -1,0 +1,12 @@
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
+  <item name="Room in Robertson Library">
+    <label text="Inserting a room in Robertson Library" />
+    <space />
+		<key key="buildingpart" value="room" />
+    <key key="indoor" value="yes" />
+		<text key="ref" text="Room Number" />
+		<optional>
+  	  <text key="name" text="Room Name" />
+		</optional>
+  </item>
+</presets>
