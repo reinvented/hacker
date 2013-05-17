@@ -3,7 +3,7 @@ PirateBox Version of IslandLives
 
 [IslandLive.ca](http://IslandLive.ca) is a repository of local community historys from Prince Edward Island, Canada assembled by [Robertson Library](http://library.upei.ca), University of Prince Edward Island.
 
-IslandLives uses Islandora to store and present books, and the script you find here will scrape content out of IslandLives and into a standalone folder of PDF files, thumbnails and an index.html file suitable for serving on a [PirateBox](http://http://wiki.daviddarts.com/PirateBox_DIY) that's not connected to the Internet.
+IslandLives uses Islandora to store and present books, and the script you find here will scrape content out of IslandLives and into a standalone folder of PDF files, thumbnails and an index.html file suitable for serving on a [PirateBox](http://wiki.daviddarts.com/PirateBox_DIY) that's not connected to the Internet.
 
 While the code here is specific to IslandLives, it would be trivial to use it to create standalone repositories of similar content from other Islandora sites or, indeed, of any content that can be harvested by [OAI](http://http://www.openarchives.org/).
 
