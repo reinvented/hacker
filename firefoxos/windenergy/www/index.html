@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PEI Wind Energy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Displays information about Prince Edward Island wind energy generation.">
+    <meta name="author" content="Peter Rukavina">
+    <link href="css/windenergy.css" rel="stylesheet">
+		<link href="css/headers.css" rel="stylesheet">
+		<link href="css/lists.css" rel="stylesheet">
+		<link href="css/buttons.css" rel="stylesheet">
+		<link href="css/progress_activity.css" rel="stylesheet">
+		<link href="css/cross_browser.css" rel="stylesheet">
+		<link href="css/util.css" rel="stylesheet">
+		<link href="css/responsive.css" rel="stylesheet">
+  </head>
+  <body>
+		<section role="region">
+			<header>
+				<h1>PEI Wind Energy</h1>
+			</header>
+		</section>
+		<section data-type="list">
+			<ul>
+				<li>
+					<aside class="pack-end">
+						<p id="onislandload"></p>
+					</aside>
+					<p>On-Island Load</p>
+				</li>
+				<li>
+					<aside class="pack-end">
+						<p id="onislandwind"></p>
+					</aside>
+					<p>On-Island Wind</p>
+				</li>
+				<li>
+					<aside class="pack-end">
+						<p id="percentagewind"></p>
+					</aside>
+					<p>% from Wind</p>
+				</li>
+			</ul>
+			<button class="recommend" style="display: none" id="refresh">Refresh</button>
+			<progress id="refreshing" style="display: none"></progress>
+		</section>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/windenergy.js"></script>
+  </body>
+</html>

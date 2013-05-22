@@ -1,0 +1,21 @@
+{
+    "version": "0.1",
+    "name": "PEI Wind Energy",
+    "description": "Prince Edward Island Wind Energy Monitor",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/img/icons/windenergy-16.png",
+        "48": "/img/icons/windenergy-48.png",
+        "128": "/img/icons/windenergy-128.png"
+    },
+    "developer": {
+        "name": "Peter Rukavina",
+        "url": "http://ruk.ca/app/windenergy"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "type": "privileged",
+    "permissions": {
+        "systemXHR": { "description": "Required for certain web communications" }
+    }
+}
