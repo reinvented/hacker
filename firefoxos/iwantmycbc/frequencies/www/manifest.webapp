@@ -1,0 +1,22 @@
+{
+    "version": "0.1",
+    "name": "CBC Transmitter Map",
+    "description": "Map of CBC Radio and Radio-Canada FM Transmitters in Canada",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/images/icons/cbc-16.png",
+        "48": "/images/icons/cbc-48.png",
+        "128": "/images/icons/cbc-128.png"
+    },
+    "developer": {
+        "name": "Peter Rukavina",
+        "url": "http://ruk.ca/app/iwantmycbc"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "type": "privileged",
+    "permissions": {
+        "systemXHR": { "description": "Required for certain web communications" },
+        "geolocation": {}
+    }
+}
