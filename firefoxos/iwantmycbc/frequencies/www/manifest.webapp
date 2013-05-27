@@ -16,7 +16,6 @@
     "default_locale": "en",
     "type": "privileged",
     "permissions": {
-        "systemXHR": { "description": "Required for certain web communications" },
         "geolocation": {}
     }
 }

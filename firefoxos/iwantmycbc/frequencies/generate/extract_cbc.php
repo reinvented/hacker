@@ -3,22 +3,10 @@
 /**
   * extract_cbc.php
   *
-  * Extracts CBC Radio FM frequencies from a previously-downloaded XML file
-  * from the Industry Canada "Spectrum Direct" search.  To generate this file
-  * go to:
-  *
-  * http://sd.ic.gc.ca/pls/engdoc_anon/web_search.frequency_range_input
-  *
-  * and enter the following search parameters:
-  *
-  * 1. Frequency Range (MHz): 87.5 to 108
-  * 2. Frequency Type to Search: Tx
-  * 3. Station Type: All of the above station types
-  * 4. Region(s): Canada Wide
-  * 5. Output Format: XML (None)
-  *
-  * Click the "Find" button and save the resulting file to the same
-  * directory as this script with filename of "frequency_range.xml".
+  * Extracts FM transmitter data from Industry Canada's "Spectrum Direct" 
+  * search (http://sd.ic.gc.ca/pls/engdoc_anon/web_search.frequency_range_input)
+  * via cURL and creates a GeoJSON of CBC Radio transmitters by filtering
+  * for those transmitters where the licensee name is "CBC/ RADIO-CANADA".
 	*
   * This program is free software; you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
@@ -41,7 +29,19 @@
   * @license http://www.fsf.org/licensing/licenses/gpl.txt GNU Public License
   */
   
-$xml = simplexml_load_file('frequency_range.xml');
+/* Grab an XML representation of all transmitters in Canada with a
+   transmitting frequency between 87.5 and 108 MHz. */
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"http://sd.ic.gc.ca/pls/engdoc_anon/web_search.frequency_range_results");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS,"frequency_1=87.5&frequency_2=108&txrx=TX&station_type=land%2C+mobile&region_list=CANADA&extra_ascii=None&output_format=5&extra_xml=None&selected_columns=&selected_columns=FREQ_STAT&selected_columns=TX_FREQ&selected_columns=RX_FREQ&selected_column_group=NONE&selected_columns=LOCATION&selected_columns=COMPANY_NAME&col_in_fmt=ARRAY_list");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$freqency_xml = curl_exec ($ch);
+curl_close ($ch);
+
+/* Parse the resulting XML file and pull out those transmitters where
+   the "licensee" is "CBC/ RADIO-CANADA" */  
+$xml = simplexml_load_string($freqency_xml);
 $list = array();
 foreach($xml->account as $key => $station) {
 	if ((string)$station->licensee_name == "CBC/ RADIO-CANADA") {
@@ -57,9 +57,10 @@ foreach($xml->account as $key => $station) {
 	}
 }
 
+/* Convert the resulting array into JSON */
 $json = json_encode(array("type" => "FeatureCollection", "features" => $list));
 
-/* Dump a JSON file of the results. */
+/* Dump the JSON file of the results. */
 $fp = fopen("../www/data/stations.json","w");
 fwrite($fp,$json);
 fclose($fp);
