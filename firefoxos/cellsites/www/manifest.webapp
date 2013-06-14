@@ -1,0 +1,20 @@
+{
+    "version": "0.1",
+    "name": "Cell Sites",
+    "description": "Map of Prince Edward Island cellular telephone towers.",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/images/icons/cellid-16.png",
+        "48": "/images/icons/cellid-48.png",
+        "128": "/images/icons/cellid-128.png"
+    },
+    "developer": {
+        "name": "Peter Rukavina",
+        "url": "http://ruk.ca/app/cellsites"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "type": "privileged",
+    "permissions": {
+    }
+}

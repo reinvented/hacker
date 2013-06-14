@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Edward Island Mobile Telephone Towers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<script src="leaflet/leaflet.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		html, body, #map {
+			height: 100%;
+		}
+		h2 {
+			font-size: 110%;
+		}
+		h2,h3 {
+			margin: 0
+		}
+	</style>
+	<body>
+	<div id="map"></div>
+	<script src="js/zepto.min.js"></script>
+	<script>
+		var map = L.map('map').setView( [46.355, -63.36], 8);
+
+		L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery by <a href="http://cloudmade.com">CloudMade</a>'
+		}).addTo(map);
+
+		$.getJSON("data/towers.json", function(data) {
+
+			var geojsonMarkerOptions = {
+					radius: 10,
+					fillColor: "#ff7800",
+					color: "#000",
+					weight: 1,
+					opacity: 1,
+					fillOpacity: 0.8
+			};
+
+			var geojsonLayer = new L.GeoJSON(data, {
+					pointToLayer: function (feature, latlng) {
+		        return L.circleMarker(latlng, geojsonMarkerOptions);
+			    },
+					style: function (feature) {
+						return {fillColor: feature.properties.colour};
+					},
+					onEachFeature: function (feature, layer) {
+						layer.bindPopup("<h2>" + feature.properties.location + "</h2><h3>" + feature.properties.shortcompany + "<br>Site Elevation: " + feature.properties.site_elevation + "m<br>Tower Height: " + feature.properties.structure_height + "m</h3>");
+					}
+			});	
+			geojsonLayer.addTo(map);
+		});
+		
+	</script>
+</body>
+</html>
