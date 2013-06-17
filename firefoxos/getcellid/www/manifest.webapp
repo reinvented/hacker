@@ -1,5 +1,5 @@
 {
-    "version": "0.1",
+    "version": "0.2",
     "name": "Get Cell ID",
     "description": "Get Cell ID information from my phone and, optionally, upload to OpenCellID.org.",
     "launch_path": "/index.html",

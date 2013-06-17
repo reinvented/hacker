@@ -8,7 +8,6 @@ The app will also, optionally, upload this information to the [OpenCellID.org](h
 TODO
 ----
 
-* Make the main screen scrollable to accommodate devices with smaller screens (the "Refresh" button gets cut off in the Firefox OS Simulator and, I presume, on the Geeksphone Keon)
 * Handle failure, especially of the OpenCellID.org update, more gracefully (or, indeed, at all), and perhaps check the OpenCellID.org key for validity when it's saved on the "Settings" page.
 * Make the Cell ID "clickable", generating a query to the OpenCellID.org API that accepts a Cell ID and returns its guess of geolocation.
 

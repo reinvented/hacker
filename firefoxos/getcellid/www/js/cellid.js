@@ -9,9 +9,14 @@ var reportssent = 0;
 startUp();
 
 function startUp() {
-	navigator.geolocation.getCurrentPosition(successGeolocation, errorNoGeolocation, { enableHighAccuracy: true, maximumAge: 0 });
 	getCellID();
 	$("#opencellid").val(localStorage.opencellid);
+	if (localStorage.send_to_opencellid == 'on') {
+		navigator.geolocation.getCurrentPosition(successGeolocation, errorNoGeolocation, { enableHighAccuracy: true, maximumAge: 0 });
+		$("#send_to_opencellid").attr('checked',true);
+		$("#gpslocation").show();
+		$("#reportssent").show();
+	}
 	window.setInterval(getCellID,30000);
 }
 
@@ -34,17 +39,15 @@ function getCellID() {
 		var signalStrength = conn.voice.signalStrength;
 
 		$("#gsmCellId").html(gsmCellId);
-		$("#gsmLocationAreaCode").html(gsmLocationAreaCode);
+		$("#network_identifiers").html(mcc + "/" + mnc + "/" + gsmLocationAreaCode);
 		$("#longName").html(longName);
-		$("#mcc").html(mcc);
-		$("#mnc").html(mnc);
 		$("#relSignalStrength").html(relSignalStrength + "/" + signalStrength);
 
 		if (!cellids[gsmCellId]) {
 			cellids[gsmCellId] = true;
 		}
 
-		if ((currentPositionLatitude) && (localStorage.opencellid != '')) {
+		if ((currentPositionLatitude) && (localStorage.opencellid != '') && (localStorage.send_to_opencellid == 'on')) {
 			var xhr = new XMLHttpRequest({mozSystem: true, responseType: 'json'});
 			var geturl = "http://www.opencellid.org/measure/add?key=7259c162f255e25e288c6e991fe11592&cellid=" + gsmCellId + "&lac=" + gsmLocationAreaCode + "&mcc=" + mcc + "&mnc=" + mnc + "&signal=" + relSignalStrength + "&lat=" + currentPositionLatitude + "&lon=" + currentPositionLongitude + "&measured_at=" + moment().format();
 			xhr.open('GET', geturl, true);
@@ -99,6 +102,21 @@ $('#close-btn').bind('click', function () {
 
 $('#done-btn').bind('click', function () {
 	window.localStorage.setItem("opencellid", $("#opencellid").val());
+	if ($("#send_to_opencellid").is(':checked')) {
+		window.localStorage.setItem("send_to_opencellid", 'on');
+		navigator.geolocation.getCurrentPosition(successGeolocation, errorNoGeolocation, { enableHighAccuracy: true, maximumAge: 0 });
+		$("#gpslocation").show();
+		$("#reportssent").show();
+	} 
+	else {
+		window.localStorage.setItem("send_to_opencellid", 'off');
+		navigator.geolocation.getCurrentPosition(successGeolocation, errorNoGeolocation, { enableHighAccuracy: true, maximumAge: 0 });
+		$("#gpslocation").hide();
+		$("#reportssent").hide();
+		if (positionInterval) {
+			navigator.geolocation.clearWatch(positionInterval);
+		}
+	}
 	$('#settings-view').removeClass('move-up');
 	$('#settings-view').addClass('move-down');
 });

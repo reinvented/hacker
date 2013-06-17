@@ -42,15 +42,10 @@
 					</li>
 					<li>
 						<aside class="pack-end">
-							<p id="gsmLocationAreaCode"></p>
+							<p id="network_identifiers"></p>
 						</aside>
-						<p>LAC</p>
-					</li>
-					<li>
-						<aside class="pack-end">
-							<p><span id="mcc"></span>/<span id="mnc"></span></p>
-						</aside>
-						<p>MCC/MNC</p>
+						<p>Identifiers</p>
+						<p>MCC/MNC/LAC</p>
 					</li>
 					<li>
 						<aside class="pack-end">
@@ -58,13 +53,13 @@
 						</aside>
 						<p>Signal Strength</p>
 					</li>
-					<li>
+					<li id="reportssent">
 						<aside class="pack-end">
 							<p id="reportssent"></p>
 						</aside>
 						<p>Reports Sent</p>
 					</li>					
-					<li>
+					<li id="gpslocation">
 						<aside class="pack-end">
 							<p id="location">Finding...</p>
 						</aside>
@@ -81,13 +76,25 @@
 				<menu type="toolbar"><button id="done-btn">save</button></menu>
 				<h1>Settings</h1>
 			</header>
-			<header>
-					<h2>Get API key from <a href="http://opencellid.org/users/signup" target="_blank">OpenCellID.org</a>.</h2>
-			</header>
 			<article>
-				<form>
-					<input placeholder="OpenCellID.org API Key" id="opencellid" required="" type="text">
-				</form>
+			<form>
+			<div data-type="list">
+				<ul>
+					<li>
+						<aside>
+							<label>
+								<input type="checkbox" id="send_to_opencellid">
+								<span></span>
+							</label>
+						</aside>
+						<p>Send to OpenCellID.org?</p>
+						<p>API key at <a href="http://opencellid.org/users/signup" target="_blank">OpenCellID.org</a></p>
+					</li>
+				</ul>
+			</div>
+			<input placeholder="OpenCellID.org API Key" id="opencellid" required="" type="text">
+			</form>
+
 			</article>
 		</section>	
 		

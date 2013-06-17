@@ -30,3 +30,13 @@ section[role="region"] {
 	transform: translateY(0);
 	transition: all 0.2s;
 }
+
+.fieldlabel {
+	font-family: "MozTT", "Moz", Sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+
+#gpslocation, #reportssent {
+	display: none;
+}
