@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Get Cell ID</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Displays information about current mobile connection.">
+		<meta name="author" content="Peter Rukavina">
+		<link href="style/cellid.css" rel="stylesheet">
+		<link href="style/headers.css" rel="stylesheet">
+		<link href="style/lists.css" rel="stylesheet">
+		<link href="style/buttons.css" rel="stylesheet">
+		<link href="style/cross_browser.css" rel="stylesheet">
+		<link href="style/util.css" rel="stylesheet">
+		<link href="style/input_areas.css" rel="stylesheet">
+		<link href="style/switches.css" rel="stylesheet">
+		<link href="style/responsive.css" rel="stylesheet">
+	</head>
+	
+	<body role="application">
+	
+		<section role="region" id="list-view">
+			<header>
+			 <menu type="toolbar">
+					<button id="settings-btn"><span class="icon icon-config">Configuration</span></button>
+				</menu>
+				<h1>Get Cell ID</h1>
+			</header>
+			<article data-type="list">
+				<ul>
+					<li>
+						<aside class="pack-end">
+							<p id="longName"></p>
+						</aside>
+						<p>Network</p>
+					</li>
+					<li>
+						<aside class="pack-end">
+							<p id="gsmCellId"></p>
+						</aside>
+						<p>Cell ID</p>
+					</li>
+					<li>
+						<aside class="pack-end">
+							<p id="gsmLocationAreaCode"></p>
+						</aside>
+						<p>LAC</p>
+					</li>
+					<li>
+						<aside class="pack-end">
+							<p><span id="mcc"></span>/<span id="mnc"></span></p>
+						</aside>
+						<p>MCC/MNC</p>
+					</li>
+					<li>
+						<aside class="pack-end">
+							<p id="relSignalStrength"></p>
+						</aside>
+						<p>Signal Strength</p>
+					</li>
+					<li>
+						<aside class="pack-end">
+							<p id="reportssent"></p>
+						</aside>
+						<p>Reports Sent</p>
+					</li>					
+					<li>
+						<aside class="pack-end">
+							<p id="location">Finding...</p>
+						</aside>
+						<p>Location</p>
+					</li>
+				</ul>
+				<button class="recommend" id="refresh">Refresh</button>
+			</article>
+		</section>
+		
+		<section role="region" id="settings-view" class="move-down">
+			<header>
+				<button id="close-btn"><span class="icon icon-close">close</span></button>
+				<menu type="toolbar"><button id="done-btn">save</button></menu>
+				<h1>Settings</h1>
+			</header>
+			<header>
+					<h2>Get API key from <a href="http://opencellid.org/users/signup" target="_blank">OpenCellID.org</a>.</h2>
+			</header>
+			<article>
+				<form>
+					<input placeholder="OpenCellID.org API Key" id="opencellid" required="" type="text">
+				</form>
+			</article>
+		</section>	
+		
+		<script src="js/zepto.min.js"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/cellid.js"></script>
+		
+	</body>
+</html>
