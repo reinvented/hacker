@@ -1,7 +1,7 @@
 {
     "version": "0.3",
-    "name": "Get Cell ID",
-    "description": "Get Cell ID information from my phone and, optionally, upload to OpenCellID.org.",
+    "name": "Test OpenCellID",
+    "description": "Compare geolocation results returned from OpenCellID.org to those from device GPS.",
     "launch_path": "/index.html",
     "icons": {
         "16": "/style/icons/cellid-16.png",
@@ -10,7 +10,7 @@
     },
     "developer": {
         "name": "Peter Rukavina",
-        "url": "http://ruk.ca/app/getcellid"
+        "url": "http://ruk.ca/app/testopencellid"
     },
     "installs_allowed_from": ["*"],
     "default_locale": "en",
@@ -26,3 +26,4 @@
 				"geolocation":{}
     }
 }
+

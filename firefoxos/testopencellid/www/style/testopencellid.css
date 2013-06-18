@@ -1,0 +1,48 @@
+@import url(headers.css);
+
+html, body, #map {
+    height: 100%;
+}
+
+section[role="region"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+}
+
+#list-view {
+	z-index: 1;
+}
+
+#settings-view {
+	z-index: 10;
+}
+
+#settings-view form {
+	margin: 1.5rem;
+}
+ 
+.move-down {
+	transform: translateY(100%);
+	transition: all 0.2s;
+}
+ 
+.move-up {
+	transform: translateY(0);
+	transition: all 0.2s;
+}
+
+.fieldlabel {
+	font-family: "MozTT", "Moz", Sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+
+#gpslocation, #reportssent_wrapper {
+	display: none;
+}
+
+

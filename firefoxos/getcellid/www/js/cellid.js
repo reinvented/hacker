@@ -100,7 +100,7 @@ function sendToOpenCellID() {
 			reportssent = reportssent + 1;
 			$("#reportssent").html(reportssent);
 			var xhr = new XMLHttpRequest({mozSystem: true, responseType: 'json'});
-			var geturl = "http://www.opencellid.org/measure/add?key=7259c162f255e25e288c6e991fe11592&cellid=" + gsmCellId + "&lac=" + gsmLocationAreaCode + "&mcc=" + mcc + "&mnc=" + mnc + "&signal=" + relSignalStrength + "&lat=" + currentPositionLatitude + "&lon=" + currentPositionLongitude + "&measured_at=" + moment().format();
+			var geturl = "http://www.opencellid.org/measure/add?key=" + localStorage.opencellid + "&cellid=" + gsmCellId + "&lac=" + gsmLocationAreaCode + "&mcc=" + mcc + "&mnc=" + mnc + "&signal=" + relSignalStrength + "&lat=" + currentPositionLatitude + "&lon=" + currentPositionLongitude + "&measured_at=" + moment().format();
 			xhr.open('GET', geturl, true);
 			xhr.send();
 		}
