@@ -100,7 +100,7 @@ foreach($xml->account as $key => $account) {
 $json = json_encode(array("type" => "FeatureCollection", "features" => $list));
 
 /* Dump the JSON file of the results. */
-$fp = fopen("../www/data/towers.json","w");
+$fp = fopen("../www/data/towers.geojson","w");
 fwrite($fp,$json);
 fclose($fp);
 

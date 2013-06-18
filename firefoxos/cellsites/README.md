@@ -38,7 +38,7 @@ How to Run
 	cd generate
 	php extract_from_industry_canada.php
  
-This will dump the GeoJSON file into [../www/data/towers.json](../www/data/towers.json) where it can be viewed with the [Leaflet-based map demonstration](../www/index.html).
+This will dump the GeoJSON file into [../www/data/towers.geojson](../www/data/towers.geojson) where it can be viewed with the [Leaflet-based map demonstration](../www/index.html).
 
 Screenshots
 ===========
