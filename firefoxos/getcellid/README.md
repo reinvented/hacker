@@ -5,6 +5,16 @@ This is an open web app, targetted at Firefox OS and tested initially on the Gee
 
 The app will also, optionally, upload this information to the [OpenCellID.org](http://opencellid.org) project via its API.
 
+Data Usage
+----------
+
+In my testing (using the "Usage" app on my Geeksphone Peak), the app uses data as follows:
+
+* initial A-GPS call: 1.42KB
+* every OpenCellID.org update: 2.13KB
+
+This means that if you leave the app set at the default update frequency of 30 seconds, and left it running all day, the app would update 2,880 times and consume 6134KB (about 6MB) of data. If you set the update frequency to 5 minutes, the app will update 288 times a day and consume 613KB.
+
 To Do
 -----
 
@@ -18,7 +28,8 @@ Uses
 * [Moment.js](http://momentjs.com/)
 
 
-Screenshot
-----------
+Screenshots
+-----------
 
 ![image](screenshots/getcellid-screenshot.png)
+![image](screenshots/getcellid-settings-screenshot.png)
