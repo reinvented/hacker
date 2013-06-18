@@ -53,9 +53,9 @@
 						</aside>
 						<p>Signal Strength</p>
 					</li>
-					<li id="reportssent">
+					<li id="reportssent_wrapper">
 						<aside class="pack-end">
-							<p id="reportssent"></p>
+							<p id="reportssent">0</p>
 						</aside>
 						<p>Reports Sent</p>
 					</li>					
@@ -63,10 +63,9 @@
 						<aside class="pack-end">
 							<p id="location">Finding...</p>
 						</aside>
-						<p>Location</p>
+						<p>GPS Location</p>
 					</li>
 				</ul>
-				<button class="recommend" id="refresh">Refresh</button>
 			</article>
 		</section>
 		
@@ -78,23 +77,38 @@
 			</header>
 			<article>
 			<form>
-			<div data-type="list">
-				<ul>
-					<li>
-						<aside>
-							<label>
-								<input type="checkbox" id="send_to_opencellid">
-								<span></span>
-							</label>
-						</aside>
-						<p>Send to OpenCellID.org?</p>
-						<p>API key at <a href="http://opencellid.org/users/signup" target="_blank">OpenCellID.org</a></p>
-					</li>
-				</ul>
-			</div>
-			<input placeholder="OpenCellID.org API Key" id="opencellid" required="" type="text">
+				<div data-type="list">
+					<ul>
+						<li>
+							<aside>
+								<label>
+									<input type="checkbox" id="send_to_opencellid">
+									<span></span>
+								</label>
+							</aside>
+							<p>Send to OpenCellID.org?</p>
+							<p>API key at <a href="http://opencellid.org/users/signup" target="_blank">OpenCellID.org</a></p>
+						</li>
+						<li>
+							<input placeholder="OpenCellID.org API Key" id="opencellid" required="" type="text">
+						</li>
+						<li>
+							<aside>
+								Update Frequency
+							</aside>
+							<aside class="pack-end">
+								<select id="updatefrequency">
+									<option value="15000">15 seconds</option>
+									<option value="30000">30 seconds</option>
+									<option value="60000">60 seconds</option>
+									<option value="300000">5 minutes</option>
+									<option value="600000">10 minutes</option>
+								</select>
+							</aside>
+						</li>
+					</ul>
+				</div>
 			</form>
-
 			</article>
 		</section>	
 		

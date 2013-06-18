@@ -37,6 +37,6 @@ section[role="region"] {
   line-height: 1.8rem;
 }
 
-#gpslocation, #reportssent {
+#gpslocation, #reportssent_wrapper {
 	display: none;
 }
