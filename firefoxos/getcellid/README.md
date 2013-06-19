@@ -20,13 +20,14 @@ To Do
 
 * Handle failure, especially of the OpenCellID.org update, more gracefully (or, indeed, at all), and perhaps check the OpenCellID.org key for validity when it's saved on the "Settings" page.
 * Make the Cell ID "clickable", generating a query to the OpenCellID.org API that accepts a Cell ID and returns its guess of geolocation.
+* Make the use of the GPS smarter: if the device is idle on a bedstand overnight there's no need to leave the GPS on when this app is running, as it will just run the battery down. So perhaps use the cell ID itself, and/or the accelerometer, to detect a change in position and turn on the GPS only when we need it.
 
-Uses
-----
+Sources
+-------
 
 * [Zepto.js](http://zeptojs.com/)
 * [Moment.js](http://momentjs.com/)
-
+* [Icon](http://vector.me/browse/195013/radio_wireless_tower_clip_art)
 
 Screenshots
 -----------

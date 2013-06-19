@@ -1,12 +1,12 @@
 {
-    "version": "0.3",
+    "version": "0.4",
     "name": "Get Cell ID",
-    "description": "Get Cell ID information from my phone and, optionally, upload to OpenCellID.org.",
+    "description": "Get mobile network cell ID information from device and, optionally, upload to OpenCellID.org.",
     "launch_path": "/index.html",
     "icons": {
-        "16": "/style/icons/cellid-16.png",
-        "48": "/style/icons/cellid-48.png",
-        "128": "/style/icons/cellid-128.png"
+        "48": "/style/icons/getcellid-icon-30.png",
+        "60": "/style/icons/getcellid-icon-60.png",
+        "128": "/style/icons/getcellid-icon-128.png"
     },
     "developer": {
         "name": "Peter Rukavina",
