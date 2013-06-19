@@ -16,13 +16,8 @@
     "default_locale": "en",
     "type": "certified",
     "permissions": {
-        "systemXHR": {},
-		    "telephony":{},
-		    "mobileconnection":{},
-				"audio-channel-telephony":{},
-				"audio-channel-ringer":{},
-				"audio-channel-content":{},
-				"audio-channel-normal":{},
-				"geolocation":{}
+        "systemXHR": { "description":"Update OpenCellID.org using data connection." },
+		    "mobileconnection": { "description":"Obtain information from the device about cell ID." },
+				"geolocation": { "description":"Obtain geolocation from the device GPS." }
     }
 }
