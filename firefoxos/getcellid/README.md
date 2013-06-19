@@ -33,4 +33,5 @@ Screenshots
 -----------
 
 ![image](screenshots/getcellid-screenshot.png)
+
 ![image](screenshots/getcellid-settings-screenshot.png)
