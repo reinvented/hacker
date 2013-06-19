@@ -208,7 +208,3 @@ $('#done-btn').bind('click', function () {
     $('#settings-view').removeClass('move-up');
     $('#settings-view').addClass('move-down');
 });
-
-$('#fake-updatefrequency-button').bind('click', function () {
-	alert("Select");
-});
