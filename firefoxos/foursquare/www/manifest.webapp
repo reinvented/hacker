@@ -1,0 +1,15 @@
+{
+    "version": "0.1",
+    "name": "Foursquare",
+    "description": "Simple Foursquare for Firefox OS.",
+    "launch_path": "/index.html",
+    "developer": {
+        "name": "Peter Rukavina",
+        "url": "http://ruk.ca/app/foursquare"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "type": "privileged",
+    "permissions": {
+    }
+}

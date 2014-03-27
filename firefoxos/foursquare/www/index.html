@@ -1,0 +1,71 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Foursquare Demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script src="js/jso.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// Add configuration for one or more providers.
+			jso_configure({
+				"foursquare": {
+					client_id: "EWIY1S3ZPTXC0NET2TZAOIUDVDKTSDVQLIZLZOIYOQKN1JIJ",
+					redirect_uri: "http://ruk.ca/",
+					authorization: "https://foursquare.com/oauth2/authorize?display=touch"
+				}
+			});
+
+			// if (!confirm('Continue')) return;
+
+			// Make sure that you have 
+			jso_ensureTokens({
+				// "facebook": ["read_stream"],
+				// "google": ["https://www.googleapis.com/auth/userinfo.profile"],
+				// "instagram": ["basic", "likes"]
+			});
+
+			// This dumps all cached tokens to console, for easyer debugging.
+			jso_dump();
+
+			// Perform a data request
+			// $.oajax({
+			// 	url: "https://api.instagram.com/v1/subscriptions",
+			// 	jso_provider: "instagram", // Will match the config identifier
+			// 	jso_scopes: false, // List of scopes (OPTIONAL)
+			// 	dataType: 'json',
+			// 	success: function(data) {
+			// 		console.log("Response (bridge):");
+			// 		console.log(data);
+			// 	},
+			// 	error: function() {
+			// 		console.log("ERROR Custom callback()");
+			// 	}
+			// });
+
+			// Perform a data request
+			$.oajax({
+				url: "https://api.foursquare.com/v2/users/self",
+				jso_provider: "foursquare",
+				jso_allowia: true,
+				jso_scopes: ["https://api.foursquare.com/v2/users/self"],
+				dataType: 'json',
+				success: function(data) {
+					console.log("Response (foursquare):");
+					console.log(data);
+				}
+			});
+
+			// jso_wipe();
+
+		});
+	</script>
+
+</head>
+<body>
+Test
+
+
+</body>
+</html>
